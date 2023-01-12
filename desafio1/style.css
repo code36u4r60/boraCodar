@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #0F0D13;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas:
+        'A B'
+        'A C';
+
+    gap: 32px;
+
+    place-content: center;
+
+    min-height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+/*** Players ***/
+.player {
+    background-color: #2A2141;
+    padding: 29px 28px;
+    border-radius: 10px;
+}
+
+.player .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+
+.song-details {
+    display: flex;
+    gap: 29px;
+    align-items: center;
+}
+
+.info {
+    color: #E1E1E6;
+    display: grid;
+    min-width: 187px;
+    gap: 9.6px;
+}
+
+.info h1 {
+    font-size: 24px;
+}
+
+.info p {
+    opacity: 0.67;
+    font-size: 19px;
+}
+
+.player img {
+    width: 84px;
+    height: 84px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+
+/*** Player 1 ***/
+
+#player-1 {
+    grid-area: A;
+    padding: 50px 38px;
+}
+
+#player-1 .wrapper {
+    width: 190px;
+}
+
+#player-1 .song-details {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#player-1 .song-details img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
+
+/*** Player 2***/
+#player-2 {
+    grid-area: B;
+}
+
+/*** Player 3 ***/
+#player-3 {
+    grid-area: C;
+}
+
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.track-time .track {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.track-time .track::before{
+    content: '';
+    height: 6px;
+    width: 100%;
+    display: block;
+    background-color: #d9d9d9;
+    opacity: 0.3;
+    border-radius: 9.6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.track-time .track::after{
+    content: '';
+    height: 6px;
+    width: 80%;
+    display: block;
+    background-color: #d9d9d9;
+    border-radius: 9.6px;
+    position: absolute;
+    z-index: 10;
+}
+
+.track-time .time {
+    color: #C4C4C4;
+    font-size: 14px;
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 670px) {
+    #app{
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        margin-block: 32px;
+    }
+
+    #player-1 .wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #player-1 .song-details{
+        align-items: center;
+    }
+
+
+}
